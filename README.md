@@ -37,6 +37,7 @@ The applications and modules used for this application are:
 1. React
 2. Redux
 3. Redux-Saga
+4. Axios
 
 ## Build and Test
 
