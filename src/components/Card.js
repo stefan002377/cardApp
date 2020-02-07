@@ -1,7 +1,13 @@
 import React from "react"
 
-const Card = ({card}) => {
+/**
+ * Component Card, return single card component
+ * @constant
+ * @type {function}
+ * @returns {JSX}
+ */
 
+const Card = ({card}) => {
   return ( 
     <li>
       <img src={card.imageUrl} alt={card.name} />
@@ -16,5 +22,4 @@ const Card = ({card}) => {
     </li>
   )
 }
-
 export default Card

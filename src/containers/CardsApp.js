@@ -13,14 +13,30 @@ import "../styles/index.css";
  */
 const CardsApp = () => {
 
-  const data = useSelector(state => state.cardApp);
+  /**
+  * Load dispatch from Redux, [cars and load] from Store and create new State page to control paginate
+  * @type {variable}
+  */
+
   const dispatch = useDispatch();
+  const {cards, load} = useSelector(state => state.cardApp);
   const [page, setPage] = useState(20);
+
+  /**
+  * Load data from API with useEffect in async mode
+  * @type {function}
+  */
 
   useEffect(() => {
     dispatch(actions.setLoad(false))
     dispatch(actions.getCards())
   }, [dispatch]) 
+
+
+  /**
+  * Set scroll events with useLayoutEffect
+  * @type {function}
+  */
 
   useLayoutEffect(() => {
     const handleScroll = () => {
@@ -36,8 +52,8 @@ const CardsApp = () => {
 
   return (
     <div className="cardApp">
-      {data.load ? (
-        <ul>{data.cards.slice(0, page).map(card => <Card key={card.id} card={card}/>)}</ul> 
+      {load ? (
+        <ul>{cards.slice(0, page).map(card => <Card key={card.id} card={card}/>)}</ul> 
       ) : (
         <div className="loading">Loading....</div>
       )}

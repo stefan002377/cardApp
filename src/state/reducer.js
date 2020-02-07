@@ -1,17 +1,26 @@
-// Initial State
+/**
+ * Declare Initial State
+ * @type {Object}
+ */
 
 const initialState = {
     cards: [],
     load:false
 };
   
-// Constants
+/**
+ * Declare constants for actions Redux
+ * @type {constants}
+ */
 
 const SET_CARDS = 'SET_CARDS';
 const GET_CARDS = 'GET_CARDS';
 const SET_LOAD = 'SET_LOAD';
 
-// Actions
+/**
+ * Create all actions Redux
+ * @type {Object}
+ */
 
 export const actions = {
     setCards: open => ({ type: SET_CARDS, payload: open }), 
@@ -19,7 +28,10 @@ export const actions = {
     setLoad: open => ({ type: SET_LOAD, payload: open })
 }
 
-// Reducer
+/**
+ * Create reduser to control states
+ * @type {function}
+ */
 
 export default (state = initialState, action) => {
     const { type, payload } = action;
