@@ -1,4 +1,4 @@
-# ui-search
+# Cards App
 
 ##	Installation process
 
